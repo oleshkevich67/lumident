@@ -208,5 +208,23 @@ e.preventDefault()
 alert("Вы успешно записались в LUMIDENT!")
 })
 </script>
+  <script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+e.preventDefault()
+
+let name = this.elements[0].value
+let phone = this.elements[1].value
+
+let message = Новая запись LUMIDENT:%0AИмя: ${name}%0AТелефон: ${phone}
+
+let url = https://api.telegram.org/bot8635108331:AAEu_lGwQJzQz0mFEADFgjPZjKg_RDJauG8/sendMessage?chat_id=841126498&text=${message}
+
+fetch(url)
+.then(() => {
+alert("Заявка отправлена!")
+this.reset()
+})
+})
+</script>
 </body>
 </html>
