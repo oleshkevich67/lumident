@@ -148,14 +148,18 @@ padding:20px;
 
 <h2>Онлайн запись</h2>
 
-<input placeholder="Ваше имя">
+<form id="bookingForm">
+
+<input type="text" placeholder="Ваше имя" required>
 <br><br>
 
-<input placeholder="Телефон">
+<input type="tel" placeholder="Телефон" required>
 <br><br>
 
-<button>Записаться</button>
+<button type="submit">Записаться</button>
 
+</form>
+  
 </section>
 
 <section>
@@ -198,6 +202,11 @@ padding:20px;
 <p>© 2026 LUMIDENT</p>
 
 </footer>
-
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+e.preventDefault()
+alert("Вы успешно записались в LUMIDENT!")
+})
+</script>
 </body>
 </html>
